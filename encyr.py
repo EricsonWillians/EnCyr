@@ -43,7 +43,10 @@ class EnCyr():
                 if _sum >= limit:
                     _sum = _sum - limit
                 self.encrypt(m, key, index+1, result+[s1[_sum]])
-                
+    
+    def __call__(self):
+		return ''.join(self.data)
+    
     def __str__(self):
         return ''.join(self.data)
         
@@ -63,7 +66,10 @@ class DeCyr():
                 if sub <= 0:
                     sub = sub + limit
                 self.decrypt(m, key, index+1, result+[s1[(lambda: sub if sub != limit else 0)()]])
-                
+    
+    def __call__(self):
+		return ''.join(self.data)
+    
     def __str__(self):
         return ''.join(self.data)
         
@@ -71,3 +77,5 @@ if __name__ == "__main__":
     
     msg = EnCyr("Topsecretmessage", 13)
     print msg
+    # decoded = DeCyr(msg(), 13)
+    # print decoded
