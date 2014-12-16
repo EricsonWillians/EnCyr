@@ -45,7 +45,7 @@ class EnCyr():
                 self.encrypt(m, key, index+1, result+[s1[_sum]])
     
     def __call__(self):
-		return ''.join(self.data)
+        return ''.join(self.data)
     
     def __str__(self):
         return ''.join(self.data)
@@ -68,7 +68,7 @@ class DeCyr():
                 self.decrypt(m, key, index+1, result+[s1[(lambda: sub if sub != limit else 0)()]])
     
     def __call__(self):
-		return ''.join(self.data)
+        return ''.join(self.data)
     
     def __str__(self):
         return ''.join(self.data)
